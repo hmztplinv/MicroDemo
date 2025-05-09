@@ -1,0 +1,39 @@
+# VS Code klasörleri
+.vscode/
+
+# MacOS sistem dosyaları
+.DS_Store
+
+# Node.js projeleri için (varsa)
+node_modules/
+dist/
+
+# .NET projeleri için (varsa)
+bin/
+obj/
+
+# Python için (varsa)
+__pycache__/
+*.pyc
+
+# Log dosyaları
+*.log
+
+# Geçici dosyalar
+*.tmp
+*.swp
+*.bak
+
+# Ortam dosyaları
+.env
+.env.*
+
+# Paket yöneticisi dosyaları
+package-lock.json
+yarn.lock
+
+# Diğer kişisel dosyalar
+*.suo
+*.user
+*.userosscache
+*.sln.docstates

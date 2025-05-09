@@ -1,0 +1,96 @@
+{
+    "ReverseProxy": {
+      "Routes": {
+        "identity-route": {
+          "ClusterId": "identity-cluster",
+          "Match": {
+            "Path": "/identity/{**catch-all}"
+          },
+          "Transforms": [
+            {
+              "PathPattern": "{**catch-all}"
+            }
+          ]
+        },
+        "catalog-route": {
+          "ClusterId": "catalog-cluster",
+          "Match": {
+            "Path": "/catalog/{**catch-all}"
+          },
+          "Transforms": [
+            {
+              "PathPattern": "{**catch-all}"
+            }
+          ]
+        },
+        "order-route": {
+          "ClusterId": "order-cluster",
+          "Match": {
+            "Path": "/order/{**catch-all}"
+          },
+          "Transforms": [
+            {
+              "PathPattern": "{**catch-all}"
+            }
+          ]
+        },
+        "payment-route": {
+          "ClusterId": "payment-cluster",
+          "Match": {
+            "Path": "/payment/{**catch-all}"
+          },
+          "Transforms": [
+            {
+              "PathPattern": "{**catch-all}"
+            }
+          ]
+        }
+      },
+      "Clusters": {
+        "identity-cluster": {
+          "Destinations": {
+            "identity1": {
+              "Address": "http://identity-service:8080"
+            }
+          },
+          "HttpClient": {
+            "MaxConnectionsPerServer": 100,
+            "DangerousAcceptAnyServerCertificate": true
+          }
+        },
+        "catalog-cluster": {
+          "Destinations": {
+            "catalog1": {
+              "Address": "http://catalog-service:80"
+            }
+          },
+          "HttpClient": {
+            "MaxConnectionsPerServer": 100,
+            "DangerousAcceptAnyServerCertificate": true
+          }
+        },
+        "order-cluster": {
+          "Destinations": {
+            "order1": {
+              "Address": "http://order-service:80"
+            }
+          },
+          "HttpClient": {
+            "MaxConnectionsPerServer": 100,
+            "DangerousAcceptAnyServerCertificate": true
+          }
+        },
+        "payment-cluster": {
+          "Destinations": {
+            "payment1": {
+              "Address": "http://payment-service:80"
+            }
+          },
+          "HttpClient": {
+            "MaxConnectionsPerServer": 100,
+            "DangerousAcceptAnyServerCertificate": true
+          }
+        }
+      }
+    }
+  }
