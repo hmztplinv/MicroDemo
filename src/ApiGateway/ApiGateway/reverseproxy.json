@@ -50,7 +50,7 @@
         "identity-cluster": {
           "Destinations": {
             "identity1": {
-              "Address": "http://identity-service:8080"
+              "Address": "http://identity-service:80"
             }
           },
           "HttpClient": {

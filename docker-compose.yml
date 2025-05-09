@@ -22,7 +22,7 @@ services:
       context: .
       dockerfile: src/Services/Identity/Identity.API/Dockerfile
     ports:
-      - "8080:8080"
+      - "8080:80"
     container_name: identity-service
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
